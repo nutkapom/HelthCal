@@ -1,14 +1,40 @@
 <ion-header>
   <ion-navbar>
     <ion-title>
-      Ionic Blank
+      Health Cal
     </ion-title>
   </ion-navbar>
 </ion-header>
 
 <ion-content padding>
-  The world is your oyster.
-  <p>
-    If you get lost, the <a href="http://ionicframework.com/docs/v2">docs</a> will be your guide.
-  </p>
+      <ion-list radio-group [(ngModel)]="sex">
+        <ion-item>
+          <ion-label>Male</ion-label>
+          <ion-radio value="male" checked></ion-radio>
+        </ion-item>
+        <ion-item>
+          <ion-label>Female</ion-label>
+          <ion-radio value="female"></ion-radio>
+        </ion-item>
+      </ion-list>
+
+      <ion-item>
+        <ion-label floating>AGE</ion-label>
+        <ion-input [(ngModel)]="age"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label floating>WEIGHT</ion-label>
+        <ion-input [(ngModel)]="weight"></ion-input>
+      </ion-item>
+
+      <ion-item >
+        <ion-label floating>Height</ion-label>
+        <ion-input [(ngModel)]="height"></ion-input>
+      </ion-item>
+
+      <button ion-button color="dark" outline block icon-left (click)="calculateCal(weight, height, age, sex)">
+        <ion-icon name="american-football"></ion-icon>
+        Calculate
+    </button>
 </ion-content>
